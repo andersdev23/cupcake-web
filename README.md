@@ -1,5 +1,7 @@
 # 🧁 Sweet Bloom – Loja de Cupcakes Artesanais
 
+[AcessarSite](https://cupcake-web-eight.vercel.app/)
+
 Projeto de mini loja online de cupcakes desenvolvido com HTML, CSS e JavaScript puro. Trabalho acadêmico de desenvolvimento web.
 
 ---
