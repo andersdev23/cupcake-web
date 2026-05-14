@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Carrinho – Sweet Bloom</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="index.html" class="logo">🧁 Sweet Bloom</a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Início</a></li>
+    <li><a href="produtos.html">Produtos</a></li>
+    <li><a href="carrinho.html" class="cart-link active">
+      🛒 Carrinho <span class="cart-badge" id="cartCount">0</span>
+    </a></li>
+  </ul>
+  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+</nav>
+
+<div class="page-header">
+  <div class="container">
+    <h1>Meu <em>Carrinho</em></h1>
+    <p>Revise seus itens antes de finalizar</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="cart-layout">
+
+      <div class="cart-items-wrapper">
+        <div id="cartEmpty" class="cart-empty" style="display:none;">
+          <div class="empty-icon">🛒</div>
+          <h3>Seu carrinho está vazio</h3>
+          <p>Adicione cupcakes deliciosos para continuar!</p>
+          <a href="produtos.html" class="btn-primary">Ver Produtos</a>
+        </div>
+        <div id="cartItemsList"></div>
+      </div>
+
+      <div class="cart-summary">
+        <h3>Resumo do Pedido</h3>
+        <div class="summary-lines">
+          <div class="summary-line">
+            <span>Subtotal</span>
+            <span id="subtotal">R$ 0,00</span>
+          </div>
+          <div class="summary-line">
+            <span>Taxa de entrega</span>
+            <span id="delivery">R$ 5,00</span>
+          </div>
+          <div class="summary-line total-line">
+            <span>Total</span>
+            <span id="totalPrice">R$ 5,00</span>
+          </div>
+        </div>
+        <a href="checkout.html" class="btn-primary full-btn" id="checkoutBtn">Finalizar Pedido →</a>
+        <a href="produtos.html" class="btn-ghost full-btn mt-sm">Continuar Comprando</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>🧁 <strong>Sweet Bloom</strong> – Cupcakes Artesanais</p>
+  <p>📍 Curitiba, PR &nbsp;|&nbsp; 📞 (41) 99999-0000 &nbsp;|&nbsp; Seg–Sáb 9h–18h</p>
+</footer>
+
+<script src="js/script.js"></script>
+<script>
+  renderCart();
+</script>
+</body>
+</html>

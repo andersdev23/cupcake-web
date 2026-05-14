@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sweet Bloom – Cupcakes Artesanais</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="index.html" class="logo">🧁 Sweet Bloom</a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html" class="active">Início</a></li>
+    <li><a href="produtos.html">Produtos</a></li>
+    <li><a href="carrinho.html" class="cart-link">
+      🛒 Carrinho <span class="cart-badge" id="cartCount">0</span>
+    </a></li>
+  </ul>
+  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+</nav>
+
+<section class="hero">
+  <div class="hero-content">
+    <span class="hero-tag">✨ Feitos com amor em Curitiba</span>
+    <h1>Cupcakes<br/><em>Artesanais</em></h1>
+    <p>Sabores únicos, ingredientes selecionados e muito carinho em cada mordida. Peça agora e receba em casa!</p>
+    <div class="hero-btns">
+      <a href="produtos.html" class="btn-primary">Ver Cardápio</a>
+      <a href="carrinho.html" class="btn-ghost">Meu Carrinho</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="cupcake-showcase">
+      <div class="floating-card card1">🍫<span>Chocolate</span></div>
+      <div class="floating-card card2">🍓<span>Morango</span></div>
+      <div class="floating-card card3">❤️<span>Red Velvet</span></div>
+      <div class="floating-card card4">🌰<span>Nutella</span></div>
+      <div class="big-emoji">🧁</div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Nossos <em>Sabores</em></h2>
+    <p class="section-sub">Clique em "+ Carrinho" para adicionar seu favorito</p>
+    <div class="products-grid">
+
+      <div class="product-card">
+        <div class="product-emoji">🍫</div>
+        <div class="product-info">
+          <h3>Cupcake Chocolate</h3>
+          <p>Massa úmida de cacau com cobertura de ganache cremosa</p>
+          <div class="product-footer">
+            <span class="price">R$ 12,00</span>
+            <button class="btn-add" onclick="addToCart('Cupcake Chocolate', 12)">+ Carrinho</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card featured">
+        <span class="badge">⭐ Mais Pedido</span>
+        <div class="product-emoji">🍓</div>
+        <div class="product-info">
+          <h3>Cupcake Morango</h3>
+          <p>Massa leve com recheio de morangos frescos e chantilly</p>
+          <div class="product-footer">
+            <span class="price">R$ 14,00</span>
+            <button class="btn-add" onclick="addToCart('Cupcake Morango', 14)">+ Carrinho</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-emoji">❤️</div>
+        <div class="product-info">
+          <h3>Red Velvet</h3>
+          <p>Clássico americano com cream cheese e cor vibrante</p>
+          <div class="product-footer">
+            <span class="price">R$ 15,00</span>
+            <button class="btn-add" onclick="addToCart('Cupcake Red Velvet', 15)">+ Carrinho</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-emoji">🌰</div>
+        <div class="product-info">
+          <h3>Cupcake Nutella</h3>
+          <p>Recheado e coberto com Nutella original importada</p>
+          <div class="product-footer">
+            <span class="price">R$ 16,00</span>
+            <button class="btn-add" onclick="addToCart('Cupcake Nutella', 16)">+ Carrinho</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-emoji">🍋</div>
+        <div class="product-info">
+          <h3>Limão Siciliano</h3>
+          <p>Massa cítrica refrescante com cobertura de lemon curd</p>
+          <div class="product-footer">
+            <span class="price">R$ 13,00</span>
+            <button class="btn-add" onclick="addToCart('Cupcake Limão Siciliano', 13)">+ Carrinho</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-emoji">🥜</div>
+        <div class="product-info">
+          <h3>Amendoim</h3>
+          <p>Combinação irresistível de chocolate e pasta de amendoim</p>
+          <div class="product-footer">
+            <span class="price">R$ 13,00</span>
+            <button class="btn-add" onclick="addToCart('Cupcake Amendoim', 13)">+ Carrinho</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section section-dark">
+  <div class="container">
+    <h2 class="section-title light">Por que a <em>Sweet Bloom?</em></h2>
+    <div class="features-grid">
+      <div class="feature">
+        <span class="feature-icon">🌿</span>
+        <h4>Ingredientes Naturais</h4>
+        <p>Sem corantes artificiais, sem conservantes. Só o melhor.</p>
+      </div>
+      <div class="feature">
+        <span class="feature-icon">🚀</span>
+        <h4>Entrega Rápida</h4>
+        <p>Entregamos em até 2 horas na região central.</p>
+      </div>
+      <div class="feature">
+        <span class="feature-icon">🎁</span>
+        <h4>Embalagem Especial</h4>
+        <p>Caixinhas lindas para presentear quem você ama.</p>
+      </div>
+      <div class="feature">
+        <span class="feature-icon">💖</span>
+        <h4>Feito na Hora</h4>
+        <p>Cada pedido é preparado fresquinho para você.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="toast" id="toast">✅ Produto adicionado ao carrinho!</div>
+
+<footer class="footer">
+  <p>🧁 <strong>Sweet Bloom</strong> – Cupcakes Artesanais</p>
+  <p>📍 Curitiba, PR &nbsp;|&nbsp; 📞 (41) 99999-0000 &nbsp;|&nbsp; Seg–Sáb 9h–18h</p>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

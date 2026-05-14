@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Produtos – Sweet Bloom</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="index.html" class="logo">🧁 Sweet Bloom</a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Início</a></li>
+    <li><a href="produtos.html" class="active">Produtos</a></li>
+    <li><a href="carrinho.html" class="cart-link">
+      🛒 Carrinho <span class="cart-badge" id="cartCount">0</span>
+    </a></li>
+  </ul>
+  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+</nav>
+
+<div class="page-header">
+  <div class="container">
+    <h1>Nosso <em>Cardápio</em></h1>
+    <p>Todos os sabores disponíveis hoje</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="products-detail-grid">
+
+      <div class="product-detail-card">
+        <div class="product-detail-emoji">🍫</div>
+        <div class="product-detail-body">
+          <div class="product-detail-header">
+            <h2>Cupcake Chocolate</h2>
+            <span class="price-big">R$ 12,00</span>
+          </div>
+          <p class="product-detail-desc">Massa úmida de cacau puro com cobertura de ganache cremosa feita com chocolate belga. Uma explosão de sabor para os amantes de chocolate.</p>
+          <ul class="ingredients">
+            <li>🥚 Ovos caipiras</li>
+            <li>🍫 Cacau 70% puro</li>
+            <li>🧈 Manteiga sem sal</li>
+            <li>🍶 Leite integral</li>
+          </ul>
+          <button class="btn-primary full-btn" onclick="addToCart('Cupcake Chocolate', 12)">Adicionar ao Carrinho 🛒</button>
+        </div>
+      </div>
+
+      <div class="product-detail-card featured-card">
+        <span class="badge">⭐ Mais Pedido</span>
+        <div class="product-detail-emoji">🍓</div>
+        <div class="product-detail-body">
+          <div class="product-detail-header">
+            <h2>Cupcake Morango</h2>
+            <span class="price-big">R$ 14,00</span>
+          </div>
+          <p class="product-detail-desc">Massa leve e aerada com recheio generoso de morangos frescos e cobertura de chantilly batido na hora. Refrescante e delicioso.</p>
+          <ul class="ingredients">
+            <li>🍓 Morangos frescos selecionados</li>
+            <li>🥛 Chantilly fresco</li>
+            <li>🌾 Farinha de trigo especial</li>
+            <li>🍬 Açúcar refinado</li>
+          </ul>
+          <button class="btn-primary full-btn" onclick="addToCart('Cupcake Morango', 14)">Adicionar ao Carrinho 🛒</button>
+        </div>
+      </div>
+
+      <div class="product-detail-card">
+        <div class="product-detail-emoji">❤️</div>
+        <div class="product-detail-body">
+          <div class="product-detail-header">
+            <h2>Red Velvet</h2>
+            <span class="price-big">R$ 15,00</span>
+          </div>
+          <p class="product-detail-desc">O clássico americano em formato de cupcake! Massa macia com cor vibrante e cobertura de cream cheese levemente adocicado.</p>
+          <ul class="ingredients">
+            <li>🧀 Cream cheese Philadelphia</li>
+            <li>❤️ Corante natural de beterraba</li>
+            <li>🧈 Manteiga sem sal</li>
+            <li>🍶 Buttermilk caseiro</li>
+          </ul>
+          <button class="btn-primary full-btn" onclick="addToCart('Cupcake Red Velvet', 15)">Adicionar ao Carrinho 🛒</button>
+        </div>
+      </div>
+
+      <div class="product-detail-card">
+        <div class="product-detail-emoji">🌰</div>
+        <div class="product-detail-body">
+          <div class="product-detail-header">
+            <h2>Cupcake Nutella</h2>
+            <span class="price-big">R$ 16,00</span>
+          </div>
+          <p class="product-detail-desc">Para os viciados em Nutella! Massa de avelã recheada e com cobertura generosa de Nutella original, finalizada com avelãs crocantes.</p>
+          <ul class="ingredients">
+            <li>🌰 Nutella original importada</li>
+            <li>🥜 Avelãs torradas</li>
+            <li>🍫 Chocolate ao leite</li>
+            <li>🥚 Ovos caipiras</li>
+          </ul>
+          <button class="btn-primary full-btn" onclick="addToCart('Cupcake Nutella', 16)">Adicionar ao Carrinho 🛒</button>
+        </div>
+      </div>
+
+      <div class="product-detail-card">
+        <div class="product-detail-emoji">🍋</div>
+        <div class="product-detail-body">
+          <div class="product-detail-header">
+            <h2>Limão Siciliano</h2>
+            <span class="price-big">R$ 13,00</span>
+          </div>
+          <p class="product-detail-desc">Leveza e frescor em cada mordida. Massa cítrica com raspas de limão siciliano real e cobertura de lemon curd caseiro.</p>
+          <ul class="ingredients">
+            <li>🍋 Limão siciliano importado</li>
+            <li>🥚 Gemas caipiras</li>
+            <li>🧈 Manteiga sem sal</li>
+            <li>🍬 Açúcar de confeiteiro</li>
+          </ul>
+          <button class="btn-primary full-btn" onclick="addToCart('Cupcake Limão Siciliano', 13)">Adicionar ao Carrinho 🛒</button>
+        </div>
+      </div>
+
+      <div class="product-detail-card">
+        <div class="product-detail-emoji">🥜</div>
+        <div class="product-detail-body">
+          <div class="product-detail-header">
+            <h2>Amendoim</h2>
+            <span class="price-big">R$ 13,00</span>
+          </div>
+          <p class="product-detail-desc">A combinação perfeita de chocolate e amendoim! Massa de chocolate com recheio de pasta de amendoim artesanal e cobertura crocante.</p>
+          <ul class="ingredients">
+            <li>🥜 Pasta de amendoim artesanal</li>
+            <li>🍫 Cacau em pó</li>
+            <li>🌾 Farinha integral</li>
+            <li>🍯 Mel de abelha</li>
+          </ul>
+          <button class="btn-primary full-btn" onclick="addToCart('Cupcake Amendoim', 13)">Adicionar ao Carrinho 🛒</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- TABELA RESUMO -->
+    <div class="price-table-wrapper">
+      <h2 class="section-title">Tabela de <em>Preços</em></h2>
+      <table class="price-table">
+        <thead>
+          <tr>
+            <th>Sabor</th>
+            <th>Descrição</th>
+            <th>Preço</th>
+            <th>Ação</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>🍫 Chocolate</td>
+            <td>Ganache cremosa de chocolate belga</td>
+            <td>R$ 12,00</td>
+            <td><button class="btn-sm" onclick="addToCart('Cupcake Chocolate', 12)">Comprar</button></td>
+          </tr>
+          <tr>
+            <td>🍓 Morango</td>
+            <td>Morangos frescos com chantilly</td>
+            <td>R$ 14,00</td>
+            <td><button class="btn-sm" onclick="addToCart('Cupcake Morango', 14)">Comprar</button></td>
+          </tr>
+          <tr>
+            <td>❤️ Red Velvet</td>
+            <td>Cream cheese com massa vermelha</td>
+            <td>R$ 15,00</td>
+            <td><button class="btn-sm" onclick="addToCart('Cupcake Red Velvet', 15)">Comprar</button></td>
+          </tr>
+          <tr>
+            <td>🌰 Nutella</td>
+            <td>Recheio e cobertura de Nutella</td>
+            <td>R$ 16,00</td>
+            <td><button class="btn-sm" onclick="addToCart('Cupcake Nutella', 16)">Comprar</button></td>
+          </tr>
+          <tr>
+            <td>🍋 Limão Siciliano</td>
+            <td>Lemon curd com raspas de limão</td>
+            <td>R$ 13,00</td>
+            <td><button class="btn-sm" onclick="addToCart('Cupcake Limão Siciliano', 13)">Comprar</button></td>
+          </tr>
+          <tr>
+            <td>🥜 Amendoim</td>
+            <td>Pasta de amendoim artesanal</td>
+            <td>R$ 13,00</td>
+            <td><button class="btn-sm" onclick="addToCart('Cupcake Amendoim', 13)">Comprar</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</section>
+
+<div class="toast" id="toast">✅ Produto adicionado ao carrinho!</div>
+
+<footer class="footer">
+  <p>🧁 <strong>Sweet Bloom</strong> – Cupcakes Artesanais</p>
+  <p>📍 Curitiba, PR &nbsp;|&nbsp; 📞 (41) 99999-0000 &nbsp;|&nbsp; Seg–Sáb 9h–18h</p>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
