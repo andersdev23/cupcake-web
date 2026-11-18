@@ -1,110 +1,79 @@
-# 🧁 Sweet Bloom – Loja de Cupcakes Artesanais
+# Sweet Bloom - Projeto Integrador II
 
-[AcessarSite](https://cupcake-web-eight.vercel.app/)
+**Anderson Alves de Souza · RGM 37137794 · Universidade Positivo (UP)**
+**Tutora:** Fabiana Sabai Rodrigues Bastos.
 
-Projeto de mini loja online de cupcakes desenvolvido com HTML, CSS e JavaScript puro. Trabalho acadêmico de desenvolvimento web.
+Evolução do Sweet Bloom entregue no PI I. A loja estática agora tem servidor Python, SQLite, registro real de pedidos, administração autenticada, validação, histórico e testes.
 
----
+## Executar
 
-## 📁 Estrutura de Pastas
+Requer Python 3.10+. Não exige pip, Node ou instalação de banco. No terminal desta pasta:
 
-```
-cupcake-web/
-│
-├── index.html        → Página inicial (Home)
-├── produtos.html     → Catálogo de produtos com detalhes e tabela de preços
-├── carrinho.html     → Carrinho de compras
-├── checkout.html     → Finalização do pedido
-│
-├── css/
-│   └── style.css     → Estilos globais (variáveis, layout, responsividade)
-│
-└── js/
-    └── script.js     → Lógica do carrinho, formulário e interações
+No Windows, também é possível dar dois cliques em `iniciar.cmd`.
+
+```powershell
+python app.py
 ```
 
----
+Se `python` abrir a Microsoft Store, nesta máquina use:
 
-## 🚀 Como Executar
+```powershell
+& 'C:\Users\ander\AppData\Local\Programs\Python\Python314\python.exe' app.py
+```
 
-1. Baixe ou clone o projeto
-2. Abra o arquivo `index.html` em qualquer navegador moderno
-3. Nenhuma instalação ou servidor é necessário
+- Loja: <http://127.0.0.1:8010/>
+- Painel: <http://127.0.0.1:8010/admin.html>
+- Senha: arquivo local `data/admin-password.txt`, gerado no primeiro início.
+- Consultar senha: `python app.py --show-admin-password`.
+- Encerrar: Ctrl+C no terminal do servidor.
 
-> ✅ Funciona 100% offline — basta abrir o arquivo no navegador.
+Abra pelo servidor Python. Duplo clique no HTML ou Live Server não executam a API. O endereço <https://cupcake-web-eight.vercel.app/> ainda corresponde à versão estática do PI I. Publicar esta evolução exige hospedagem Python com armazenamento persistente.
 
----
+## Funcionalidades
 
-## 📄 Páginas
+Catálogo com seis sabores; carrinho persistente; cadastro de destinatário/endereço; cálculo de valores no servidor; registro transacional; recibo com número real; painel com sessão, busca, filtros, paginação, histórico e atualização de status; edição de preços e disponibilidade.
 
-### 1. `index.html` — Home
-- Nome e identidade da loja
-- Hero animado com os sabores disponíveis
-- Grid de produtos com botão "Adicionar ao Carrinho"
-- Seção de diferenciais da loja
+Valores são guardados em centavos. Entrega: R$ 5,00. PIX: desconto de 5% sobre os produtos. Pedidos anteriores preservam os preços praticados. A chave de idempotência evita duplicação na repetição da mesma solicitação. Controle de versão identifica conflitos administrativos.
 
-### 2. `produtos.html` — Produtos
-- Cards detalhados com descrição e ingredientes de cada cupcake
-- Tabela resumida com todos os preços
-- Botão de compra em cada item
+O pagamento é **apenas registrado para combinar com a loja**. Não há cobrança, integração WhatsApp, cadastro de novos sabores ou múltiplos funcionários. O servidor usa 127.0.0.1 e destina-se à demonstração local; publicação pública exige infraestrutura e configuração próprias.
 
-### 3. `carrinho.html` — Carrinho
-- Lista de itens adicionados
-- Controle de quantidade (+ / −)
-- Cálculo automático do subtotal, entrega e total
-- Botão para finalizar pedido
+## Testar
 
-### 4. `checkout.html` — Finalizar Pedido
-- Campos: nome, telefone, e-mail, endereço, complemento, CEP
-- Seleção de forma de pagamento (PIX, Crédito, Débito, Dinheiro)
-- Campo de observações
-- Modal de confirmação com resumo do pedido
+```powershell
+python -m unittest discover -s tests -v
+```
 
----
+São 15 testes de regras, persistência, concorrência e HTTP, usando bancos temporários e dados fictícios. Capturas adicionais do navegador: `docs/evidencias/`.
 
-## ⚙️ Funcionalidades
+## Estrutura
 
-| Funcionalidade | Descrição |
+| Caminho | Responsabilidade |
 |---|---|
-| Carrinho persistente | Usa `localStorage` — não perde os itens ao trocar de página |
-| Contador na navbar | Atualiza em tempo real ao adicionar/remover itens |
-| Controle de quantidade | Botões + e − com remoção automática ao chegar em zero |
-| Cálculo de total | Subtotal + taxa de entrega fixa de R$ 5,00 |
-| Validação de formulário | Verifica campos obrigatórios antes de confirmar |
-| Toast notification | Notificação animada ao adicionar produto ao carrinho |
-| Modal de confirmação | Exibe resumo completo do pedido após confirmar |
-| Responsivo | Layout adaptado para desktop, tablet e celular |
-| Menu mobile | Hambúrguer com navegação colapsável em telas pequenas |
+| app.py | Inicialização e configuração |
+| backend/models.py | Banco, esquema físico e consultas |
+| backend/services.py | Regras e transações |
+| backend/controllers.py | HTTP, autenticação e respostas |
+| *.html, css/, js/ | Vistas da loja e administração |
+| tests/ | Testes automatizados |
+| docs/ | Documentação acadêmica |
+| data/ | Banco e senha locais, ignorados no Git |
 
----
+Configuração opcional: `SWEETBLOOM_ADMIN_PASSWORD` (mínimo oito caracteres), `SWEETBLOOM_DB` (caminho do banco) e `python app.py --port 8012`. Não publique a pasta data. Faça backup do banco com o servidor encerrado.
 
-## 🎨 Tecnologias Utilizadas
+As fontes da interface estão incluídas localmente, com licenças OFL em assets/fonts. Para gerar novamente os PDFs (opcional), instale `reportlab` e execute `python scripts/gerar_documentos.py`; isso não é necessário para executar a aplicação ou seus testes.
 
-- **HTML5** — Estrutura semântica das páginas
-- **CSS3** — Estilização com variáveis CSS, Grid, Flexbox e animações
-- **JavaScript (ES6+)** — Lógica do carrinho, DOM e eventos
-- **Google Fonts** — Playfair Display + DM Sans
-- **localStorage** — Persistência do carrinho no navegador
+## Documentação e entrega
 
-> Sem frameworks, sem bibliotecas externas, sem backend.
+1. [Planejamento](docs/01_planejamento.md)
+2. [UML, banco e dicionário](docs/02_modelagem.md)
+3. [Formulário para cinco avaliadores](docs/03_formulario_avaliacao.md)
+4. [Testes e resultados](docs/04_testes_resultados.md)
+5. [Manual, vídeo e checklist](docs/05_manual_video_entrega.md)
+6. [Continuidade visual](docs/06_identidade_visual.md)
+7. [Matriz de atendimento ao enunciado](docs/07_matriz_enunciado.md)
 
----
+PDFs preparados: [relatório técnico](output/pdf/relatorio_tecnico_sweet_bloom_pi2.pdf) e [formulários preenchíveis para cinco participantes](output/pdf/formularios_cinco_avaliadores.pdf). Os formulários estão em branco; preenchê-los e salvar após os testes reais.
 
-## 🛍️ Produtos Disponíveis
+**Pendências humanas:** cinco avaliações reais, consolidação em PDF e vídeo narrado. Formulários vazios e testes automatizados não substituem as avaliações. Conferir o modelo oficial no AVA.
 
-| Sabor | Preço |
-|---|---|
-| 🍫 Cupcake Chocolate | R$ 12,00 |
-| 🍓 Cupcake Morango | R$ 14,00 |
-| ❤️ Red Velvet | R$ 15,00 |
-| 🌰 Cupcake Nutella | R$ 16,00 |
-| 🍋 Limão Siciliano | R$ 13,00 |
-| 🥜 Cupcake Amendoim | R$ 13,00 |
-
----
-
-## 👩‍💻 Autora
-
-Desenvolvido como trabalho acadêmico.
-
-**Sweet Bloom** – Cupcakes Artesanais · Curitiba, PR
+Origem: <https://github.com/andersdev23/cupcake-web>, revisão `1c64815`. Branch local: `pi2/evolucao-sweet-bloom`. A branch local não significa que as alterações foram enviadas ao GitHub.

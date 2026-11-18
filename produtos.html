@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Produtos – Sweet Bloom</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css?v=pi2" />
+  <link rel="stylesheet" href="css/pi2.css?v=1" />
 </head>
 <body>
 
@@ -18,7 +18,7 @@
       🛒 Carrinho <span class="cart-badge" id="cartCount">0</span>
     </a></li>
   </ul>
-  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+  <button class="menu-toggle" type="button" onclick="toggleMenu()" aria-label="Abrir menu" aria-controls="navLinks" aria-expanded="false">Menu</button>
 </nav>
 
 <div class="page-header">
@@ -46,7 +46,7 @@
             <li>🧈 Manteiga sem sal</li>
             <li>🍶 Leite integral</li>
           </ul>
-          <button class="btn-primary full-btn" onclick="addToCart('Cupcake Chocolate', 12)">Adicionar ao Carrinho 🛒</button>
+          <button class="btn-primary full-btn" data-product-name="Cupcake Chocolate" onclick="addToCart('Cupcake Chocolate')">Adicionar ao Carrinho 🛒</button>
         </div>
       </div>
 
@@ -65,7 +65,7 @@
             <li>🌾 Farinha de trigo especial</li>
             <li>🍬 Açúcar refinado</li>
           </ul>
-          <button class="btn-primary full-btn" onclick="addToCart('Cupcake Morango', 14)">Adicionar ao Carrinho 🛒</button>
+          <button class="btn-primary full-btn" data-product-name="Cupcake Morango" onclick="addToCart('Cupcake Morango')">Adicionar ao Carrinho 🛒</button>
         </div>
       </div>
 
@@ -83,7 +83,7 @@
             <li>🧈 Manteiga sem sal</li>
             <li>🍶 Buttermilk caseiro</li>
           </ul>
-          <button class="btn-primary full-btn" onclick="addToCart('Cupcake Red Velvet', 15)">Adicionar ao Carrinho 🛒</button>
+          <button class="btn-primary full-btn" data-product-name="Cupcake Red Velvet" onclick="addToCart('Cupcake Red Velvet')">Adicionar ao Carrinho 🛒</button>
         </div>
       </div>
 
@@ -101,7 +101,7 @@
             <li>🍫 Chocolate ao leite</li>
             <li>🥚 Ovos caipiras</li>
           </ul>
-          <button class="btn-primary full-btn" onclick="addToCart('Cupcake Nutella', 16)">Adicionar ao Carrinho 🛒</button>
+          <button class="btn-primary full-btn" data-product-name="Cupcake Nutella" onclick="addToCart('Cupcake Nutella')">Adicionar ao Carrinho 🛒</button>
         </div>
       </div>
 
@@ -119,7 +119,7 @@
             <li>🧈 Manteiga sem sal</li>
             <li>🍬 Açúcar de confeiteiro</li>
           </ul>
-          <button class="btn-primary full-btn" onclick="addToCart('Cupcake Limão Siciliano', 13)">Adicionar ao Carrinho 🛒</button>
+          <button class="btn-primary full-btn" data-product-name="Cupcake Limão Siciliano" onclick="addToCart('Cupcake Limão Siciliano')">Adicionar ao Carrinho 🛒</button>
         </div>
       </div>
 
@@ -137,7 +137,7 @@
             <li>🌾 Farinha integral</li>
             <li>🍯 Mel de abelha</li>
           </ul>
-          <button class="btn-primary full-btn" onclick="addToCart('Cupcake Amendoim', 13)">Adicionar ao Carrinho 🛒</button>
+          <button class="btn-primary full-btn" data-product-name="Cupcake Amendoim" onclick="addToCart('Cupcake Amendoim')">Adicionar ao Carrinho 🛒</button>
         </div>
       </div>
 
@@ -160,37 +160,37 @@
             <td>🍫 Chocolate</td>
             <td>Ganache cremosa de chocolate belga</td>
             <td>R$ 12,00</td>
-            <td><button class="btn-sm" onclick="addToCart('Cupcake Chocolate', 12)">Comprar</button></td>
+            <td><button class="btn-sm" data-product-name="Cupcake Chocolate" onclick="addToCart('Cupcake Chocolate')">Comprar</button></td>
           </tr>
           <tr>
             <td>🍓 Morango</td>
             <td>Morangos frescos com chantilly</td>
             <td>R$ 14,00</td>
-            <td><button class="btn-sm" onclick="addToCart('Cupcake Morango', 14)">Comprar</button></td>
+            <td><button class="btn-sm" data-product-name="Cupcake Morango" onclick="addToCart('Cupcake Morango')">Comprar</button></td>
           </tr>
           <tr>
             <td>❤️ Red Velvet</td>
             <td>Cream cheese com massa vermelha</td>
             <td>R$ 15,00</td>
-            <td><button class="btn-sm" onclick="addToCart('Cupcake Red Velvet', 15)">Comprar</button></td>
+            <td><button class="btn-sm" data-product-name="Cupcake Red Velvet" onclick="addToCart('Cupcake Red Velvet')">Comprar</button></td>
           </tr>
           <tr>
             <td>🌰 Nutella</td>
             <td>Recheio e cobertura de Nutella</td>
             <td>R$ 16,00</td>
-            <td><button class="btn-sm" onclick="addToCart('Cupcake Nutella', 16)">Comprar</button></td>
+            <td><button class="btn-sm" data-product-name="Cupcake Nutella" onclick="addToCart('Cupcake Nutella')">Comprar</button></td>
           </tr>
           <tr>
             <td>🍋 Limão Siciliano</td>
             <td>Lemon curd com raspas de limão</td>
             <td>R$ 13,00</td>
-            <td><button class="btn-sm" onclick="addToCart('Cupcake Limão Siciliano', 13)">Comprar</button></td>
+            <td><button class="btn-sm" data-product-name="Cupcake Limão Siciliano" onclick="addToCart('Cupcake Limão Siciliano')">Comprar</button></td>
           </tr>
           <tr>
             <td>🥜 Amendoim</td>
             <td>Pasta de amendoim artesanal</td>
             <td>R$ 13,00</td>
-            <td><button class="btn-sm" onclick="addToCart('Cupcake Amendoim', 13)">Comprar</button></td>
+            <td><button class="btn-sm" data-product-name="Cupcake Amendoim" onclick="addToCart('Cupcake Amendoim')">Comprar</button></td>
           </tr>
         </tbody>
       </table>
@@ -199,13 +199,14 @@
   </div>
 </section>
 
-<div class="toast" id="toast">✅ Produto adicionado ao carrinho!</div>
+<div class="toast" id="toast" role="status" aria-live="polite">✅ Produto adicionado ao carrinho!</div>
 
 <footer class="footer">
   <p>🧁 <strong>Sweet Bloom</strong> – Cupcakes Artesanais</p>
   <p>📍 Curitiba, PR &nbsp;|&nbsp; 📞 (41) 99999-0000 &nbsp;|&nbsp; Seg–Sáb 9h–18h</p>
+<p><a href="admin.html" class="admin-access">Administração</a> · Versão acadêmica PI II</p>
 </footer>
 
-<script src="js/script.js"></script>
+<script src="js/script.js?v=pi2"></script>
 </body>
 </html>
